@@ -3,35 +3,10 @@ import java.util.List;
 
 import com.hp.hpl.jena.query.QuerySolution;
 
+import es.uma.khaos.ontology_endpoint.config.Constants;
+
 
 public class Explorer {
-	
-	private final String CLASS_QUERY =
-			"select distinct ?class "
-			+ "where {"
-			+ "?s a ?class"
-			+ "}";
-	
-	private final String PROPERTY_QUERY =
-			"select distinct ?property "
-			+ "where {"
-			+ "?s ?property ?o"
-			+ "}";
-	
-	private final String DOMAIN_QUERY =
-			"select distinct ?domain "
-			+ "where {"
-			+ "?o <%s> ?range."
-			+ "?o a ?domain."
-			+ "}";
-	
-	private final String RANGE_QUERY =
-			"select distinct ?range "
-			+ "where {"
-			+ "?domain <%s> ?o."
-			+ "?o a ?range."
-			+ "}";
-	
 	
 	private final String endpoint;
 	private final String graph;
@@ -70,19 +45,19 @@ public class Explorer {
 //	}
 	
 	public List<QuerySolution> getClasses() {
-		return executeQuery(CLASS_QUERY);
+		return executeQuery(Constants.CLASS_QUERY);
 	}
 	
 	public List<QuerySolution> getProperties() {
-		return executeQuery(PROPERTY_QUERY);
+		return executeQuery(Constants.PROPERTY_QUERY);
 	}
 	
 	public List<QuerySolution> getDomainsFromProperty(String property) {
-		return executeQuery(String.format(DOMAIN_QUERY, property));
+		return executeQuery(String.format(Constants.DOMAIN_QUERY, property));
 	}
 	
 	public List<QuerySolution> getRangesFromProperty(String property) {
-		return executeQuery(String.format(RANGE_QUERY, property));
+		return executeQuery(String.format(Constants.RANGE_QUERY, property));
 	}
 	
 	/*
@@ -116,14 +91,14 @@ public class Explorer {
 		
 		list = getClasses();
 		for (QuerySolution qs : list) {
-			String classUri = qs.getResource("class").getURI();
+			String classUri = qs.getResource(Constants.CLASS_VAR).getURI();
 			endpointOntology.addClass(classUri);
 		}
 		System.out.println(list.size() + " clases obtenidas.");
 		
 		list = getProperties();
 		for (QuerySolution qs : list) {
-			String propertyUri = qs.getResource("property").getURI();
+			String propertyUri = qs.getResource(Constants.PROPERTY_VAR).getURI();
 			endpointOntology.addProperty(propertyUri);
 		}
 		System.out.println(list.size() + " propiedades encontradas.");
@@ -131,7 +106,7 @@ public class Explorer {
 		for (String propertyUri : endpointOntology.getProperties()) {
 			list = getDomainsFromProperty(propertyUri);
 			for (QuerySolution qs : list) {
-				String domainUri = qs.getResource("domain").getURI();
+				String domainUri = qs.getResource(Constants.DOMAIN_VAR).getURI();
 				endpointOntology.addDomain(propertyUri, domainUri);
 			}
 			System.out.println(list.size()
@@ -141,7 +116,7 @@ public class Explorer {
 		for (String propertyUri : endpointOntology.getProperties()) {
 			list = getRangesFromProperty(propertyUri);
 			for (QuerySolution qs : list) {
-				String rangeUri = qs.getResource("range").getURI();
+				String rangeUri = qs.getResource(Constants.RANGE_VAR).getURI();
 				endpointOntology.addRange(propertyUri, rangeUri);
 			}
 			System.out.println(list.size()
