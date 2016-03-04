@@ -1,4 +1,4 @@
-package es.uma.khaos.endpoint_browser;
+package es.uma.khaos.ontology_endpoint;
 
 import java.io.File;
 
