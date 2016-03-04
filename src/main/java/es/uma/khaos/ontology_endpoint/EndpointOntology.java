@@ -147,7 +147,6 @@ public class EndpointOntology {
 		
 		manager.saveOntology(ont, IRI.create(file.toURI()));
 		
-		
 	}
 
 }
