@@ -1,9 +1,13 @@
-package es.uma.khaos.ontology_endpoint;
+package es.uma.khaos.ontology_endpoint.main;
 
 import java.io.File;
 
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyStorageException;
+
+import es.uma.khaos.ontology_endpoint.explorer.Explorer;
+import es.uma.khaos.ontology_endpoint.ontology.OntologyData;
+import es.uma.khaos.ontology_endpoint.ontology.OntologyUtils;
 
 public class ExecuteMain {
 	
@@ -16,10 +20,9 @@ public class ExecuteMain {
 //		String graph = "http://khaos.uma.es/olivedb";
 		
 		Explorer explorer = new Explorer(endpoint, graph);
-		EndpointOntology ontology = explorer.buildOntologyFromEndpoint();
-		ontology.print(System.out);
-		File file = new File("endpoint.owl");
-		ontology.buildOwlFile(file);
+		OntologyData ontology = explorer.execute();
+		OntologyUtils.print(ontology);
+		OntologyUtils.buildOwlFile(ontology, new File("endpoint.owl"));
 	}
 
 }

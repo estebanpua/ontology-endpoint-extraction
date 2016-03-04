@@ -1,10 +1,12 @@
-package es.uma.khaos.ontology_endpoint;
+package es.uma.khaos.ontology_endpoint.explorer;
+
 import java.util.List;
 
 import com.hp.hpl.jena.query.QuerySolution;
 
 import es.uma.khaos.ontology_endpoint.config.Constants;
-
+import es.uma.khaos.ontology_endpoint.ontology.OntologyData;
+import es.uma.khaos.ontology_endpoint.sparql.SPARQLExecution;
 
 public class Explorer {
 	
@@ -84,9 +86,9 @@ public class Explorer {
 	}
 	*/
 	
-	public EndpointOntology buildOntologyFromEndpoint() {
+	public OntologyData execute() {
 		
-		EndpointOntology endpointOntology = new EndpointOntology();
+		OntologyData endpointOntology = new OntologyData();
 		List<QuerySolution> list;
 		
 		list = getClasses();
