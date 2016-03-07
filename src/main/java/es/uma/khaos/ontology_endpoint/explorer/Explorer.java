@@ -11,16 +11,19 @@ import es.uma.khaos.ontology_endpoint.sparql.SPARQLExecution;
 public class Explorer {
 	
 	private final String endpoint;
-	private final String graph;
+	private String graph = null;
 	private final int timeout = 60000;
 	
 	public Explorer(String endpoint) {
 		this.endpoint = endpoint;
-		this.graph = null;
 	}
 	
 	public Explorer(String endpoint, String graph) {
-		this.endpoint = endpoint;
+		this(endpoint);
+		this.graph = graph;
+	}
+	
+	public void setGraph(String graph) {
 		this.graph = graph;
 	}
 	
