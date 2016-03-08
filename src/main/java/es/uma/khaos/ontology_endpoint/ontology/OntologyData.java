@@ -33,9 +33,23 @@ public class OntologyData {
 	public Map<String, Set<String>> getDomains() {
 		return domains;
 	}
+	
+	public Set<String> getDomain(String property) {
+		if (domains.containsKey(property))
+			return domains.get(property);
+		else
+			return new HashSet<String>();
+	}
 
 	public Map<String, Set<String>> getRanges() {
 		return ranges;
+	}
+	
+	public Set<String> getRange(String property) {
+		if (ranges.containsKey(property))
+			return ranges.get(property);
+		else
+			return new HashSet<String>();
 	}
 	
 	public void addClass(String class_) {
@@ -58,6 +72,26 @@ public class OntologyData {
 			ranges.put(property, new HashSet<String>());
 		}
 		ranges.get(property).add(class_);
+	}
+	
+	public Set<String> getPropertiesFromClass(String class_) {
+		Set<String> res = new HashSet<String>();
+		for (String property : domains.keySet()) {
+			if (domains.get(property).contains(class_)) {
+				res.add(property);
+			}
+		}
+		return res;
+	}
+	
+	public Set<String> getPropertiesToClass(String class_) {
+		Set<String> res = new HashSet<String>();
+		for (String property : ranges.keySet()) {
+			if (ranges.get(property).contains(class_)) {
+				res.add(property);
+			}
+		}
+		return res;
 	}
 	
 }
