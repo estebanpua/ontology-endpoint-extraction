@@ -1,6 +1,7 @@
 package es.uma.khaos.ontology_endpoint.explorer;
 
 import java.util.List;
+import java.util.Set;
 
 import com.hp.hpl.jena.query.QuerySolution;
 import com.hp.hpl.jena.rdf.model.Resource;
@@ -114,25 +115,25 @@ public class Explorer {
 		}
 		System.out.println(list.size() + " propiedades encontradas.");
 		
-//		for (String propertyUri : endpointOntology.getProperties()) {
-//			list = getDomainsFromProperty(propertyUri);
-//			for (QuerySolution qs : list) {
-//				String domainUri = qs.getResource(Constants.DOMAIN_VAR).getURI();
-//				endpointOntology.addDomain(propertyUri, domainUri);
-//			}
-//			System.out.println(list.size()
-//					+ " dominios obtenidos para "+propertyUri+".");
-//		}
-//		
-//		for (String propertyUri : endpointOntology.getProperties()) {
-//			list = getRangesFromProperty(propertyUri);
-//			for (QuerySolution qs : list) {
-//				String rangeUri = qs.getResource(Constants.RANGE_VAR).getURI();
-//				endpointOntology.addRange(propertyUri, rangeUri);
-//			}
-//			System.out.println(list.size()
-//					+ " rangos obtenidos para "+propertyUri+".");
-//		}
+		for (String propertyUri : endpointOntology.getProperties()) {
+			list = getDomainsFromProperty(propertyUri);
+			for (QuerySolution qs : list) {
+				String domainUri = qs.getResource(Constants.DOMAIN_VAR).getURI();
+				endpointOntology.addDomain(propertyUri, domainUri);
+			}
+			System.out.println(list.size()
+					+ " dominios obtenidos para "+propertyUri+".");
+		}
+		
+		for (String propertyUri : endpointOntology.getProperties()) {
+			list = getRangesFromProperty(propertyUri);
+			for (QuerySolution qs : list) {
+				String rangeUri = qs.getResource(Constants.RANGE_VAR).getURI();
+				endpointOntology.addRange(propertyUri, rangeUri);
+			}
+			System.out.println(list.size()
+					+ " rangos obtenidos para "+propertyUri+".");
+		}
 		
 		for (String propertyUri : endpointOntology.getProperties()) {
 			System.out.println("xuxa1:"+  propertyUri);
@@ -154,8 +155,28 @@ public class Explorer {
 					+ "data type obtenidos para "+propertyUri+".");
 		}
 		
+		
+		for (String propertyUri : endpointOntology.getProperties()) {
+			
+			Set<String> ranges = endpointOntology.getRange(propertyUri);
+			//System.out.println(list.size());
+			
+			for (String range : ranges) {
+				
+				if (endpointOntology.getClasses().contains(range)) {
+					endpointOntology.addObjectProperty(propertyUri);
+				}
+				
+				if (endpointOntology.getDatatype().contains(range)) {
+					endpointOntology.addDataProperty(propertyUri);
+				}
+			}
+		}
+		
 		return endpointOntology;
 		
 	}
+	
+
 
 }

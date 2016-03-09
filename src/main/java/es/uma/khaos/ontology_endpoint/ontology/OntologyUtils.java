@@ -66,6 +66,21 @@ public final class OntologyUtils {
 		}
 		ps.println();
 		
+		
+		ps.println("ObjectProperties:");
+		for (String objectproperties: ontologyData.getObjectproperties()) {
+			ps.println("\t"+objectproperties);
+		}
+		ps.println();
+		
+		ps.println("DataProperties:");
+		for (String dataproperties: ontologyData.getDataproperties()) {
+			ps.println("\t"+dataproperties);
+		}
+		ps.println();
+		
+		
+		
 	}
 	
 	public static void buildOwlFile(OntologyData ontologyData, File file) throws OWLOntologyCreationException, OWLOntologyStorageException {

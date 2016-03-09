@@ -11,6 +11,10 @@ public class OntologyData {
 	
 	private Set<String> properties;
 	
+	private Set<String> objectproperties;
+	
+	private Set<String> dataproperties;
+	
 	private Map<String, Set<String>> domains;
 	
 	private Map<String, Set<String>> ranges;
@@ -23,6 +27,9 @@ public class OntologyData {
 		domains = new HashMap<String, Set<String>>();
 		ranges = new HashMap<String, Set<String>>();
 		datatype = new HashSet<String>(); //HashSet for data types
+		objectproperties = new HashSet<String>();
+		dataproperties = new HashSet<String>();
+		
 	}
 
 	public Set<String> getClasses() {
@@ -31,6 +38,14 @@ public class OntologyData {
 
 	public Set<String> getProperties() {
 		return properties;
+	}
+
+	public Set<String> getObjectproperties() {
+		return objectproperties;
+	}
+
+	public Set<String> getDataproperties() {
+		return dataproperties;
 	}
 
 	public Map<String, Set<String>> getDomains() {
@@ -58,6 +73,10 @@ public class OntologyData {
 		else
 			return new HashSet<String>();
 	}
+	
+
+	
+	
 	
 	
 	public void addClass(String class_) {
@@ -95,6 +114,20 @@ public class OntologyData {
 		datatype.add(datatype_);
 		
 	}
+	
+	public void addDataProperty(String dataproperty_) {
+		
+		dataproperties.add(dataproperty_);
+		
+	}
+	
+	
+	public void addObjectProperty(String objectproperty_) {
+		
+		objectproperties.add(objectproperty_);
+		
+	}
+	
 	
 	
 	
