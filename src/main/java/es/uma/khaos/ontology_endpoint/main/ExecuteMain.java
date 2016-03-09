@@ -22,7 +22,7 @@ public class ExecuteMain {
 		Explorer explorer = new Explorer(endpoint, graph);
 		OntologyData ontology = explorer.execute();
 		OntologyUtils.print(ontology);
-		OntologyUtils.buildOwlFile(ontology, new File("endpoint.owl"));
+	//	OntologyUtils.buildOwlFile(ontology, new File("endpoint.owl"));
 	}
 
 }

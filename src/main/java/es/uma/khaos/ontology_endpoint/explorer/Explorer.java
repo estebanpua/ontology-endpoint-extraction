@@ -65,7 +65,7 @@ public class Explorer {
 		return executeQuery(String.format(Constants.RANGE_QUERY, property));
 	}
 	
-	public List<QuerySolution> geDataTypeFromProperty(String property) {
+	public List<QuerySolution> getDataTypeFromProperty(String property) {
 		return executeQuery(String.format(Constants.DATA_TYPE_QUERY, property));
 	}
 	
@@ -113,34 +113,36 @@ public class Explorer {
 		}
 		System.out.println(list.size() + " propiedades encontradas.");
 		
-		for (String propertyUri : endpointOntology.getProperties()) {
-			list = getDomainsFromProperty(propertyUri);
-			for (QuerySolution qs : list) {
-				String domainUri = qs.getResource(Constants.DOMAIN_VAR).getURI();
-				endpointOntology.addDomain(propertyUri, domainUri);
-			}
-			System.out.println(list.size()
-					+ " dominios obtenidos para "+propertyUri+".");
-		}
+//		for (String propertyUri : endpointOntology.getProperties()) {
+//			list = getDomainsFromProperty(propertyUri);
+//			for (QuerySolution qs : list) {
+//				String domainUri = qs.getResource(Constants.DOMAIN_VAR).getURI();
+//				endpointOntology.addDomain(propertyUri, domainUri);
+//			}
+//			System.out.println(list.size()
+//					+ " dominios obtenidos para "+propertyUri+".");
+//		}
+//		
+//		for (String propertyUri : endpointOntology.getProperties()) {
+//			list = getRangesFromProperty(propertyUri);
+//			for (QuerySolution qs : list) {
+//				String rangeUri = qs.getResource(Constants.RANGE_VAR).getURI();
+//				endpointOntology.addRange(propertyUri, rangeUri);
+//			}
+//			System.out.println(list.size()
+//					+ " rangos obtenidos para "+propertyUri+".");
+//		}
 		
 		for (String propertyUri : endpointOntology.getProperties()) {
-			list = getRangesFromProperty(propertyUri);
-			for (QuerySolution qs : list) {
-				String rangeUri = qs.getResource(Constants.RANGE_VAR).getURI();
-				endpointOntology.addRange(propertyUri, rangeUri);
-			}
-			System.out.println(list.size()
-					+ " rangos obtenidos para "+propertyUri+".");
-		}
-		
-		for (String propertyUri : endpointOntology.getProperties()) {
-			list = getRangesFromProperty(propertyUri);
+			System.out.println("xuxa1:"+  propertyUri);
+			list = getDataTypeFromProperty(propertyUri);
 			for (QuerySolution qs : list) {
 				String rangeUri = qs.getResource(Constants.DATA_TYPE_VAR).getURI();
+				System.out.println("xuxa4");
 				endpointOntology.addRangeDataType(propertyUri, rangeUri);
 			}
 			System.out.println(list.size()
-					+ " rangos data type obtenidos para "+propertyUri+".");
+					+ "data type obtenidos para "+propertyUri+".");
 		}
 		
 		return endpointOntology;
