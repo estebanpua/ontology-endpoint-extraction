@@ -3,6 +3,7 @@ package es.uma.khaos.ontology_endpoint.explorer;
 import java.util.List;
 
 import com.hp.hpl.jena.query.QuerySolution;
+import com.hp.hpl.jena.rdf.model.Resource;
 
 import es.uma.khaos.ontology_endpoint.config.Constants;
 import es.uma.khaos.ontology_endpoint.ontology.OntologyData;
@@ -137,9 +138,17 @@ public class Explorer {
 			System.out.println("xuxa1:"+  propertyUri);
 			list = getDataTypeFromProperty(propertyUri);
 			for (QuerySolution qs : list) {
-				String rangeUri = qs.getResource(Constants.DATA_TYPE_VAR).getURI();
-				System.out.println("xuxa4");
-				endpointOntology.addRangeDataType(propertyUri, rangeUri);
+				System.out.println("PUA CABREADO");
+				System.out.println(qs.getResource("datatype"));
+				System.out.println("PUAAAAA");
+				System.out.println(qs.getResource(Constants.DATA_TYPE_VAR));
+				Resource resource = qs.getResource(Constants.DATA_TYPE_VAR);
+				if (resource!=null) {
+					String rangeUri = resource.getURI();
+					endpointOntology.addRangeDataType(propertyUri, rangeUri);
+					endpointOntology.addDataType(propertyUri);
+				}
+				
 			}
 			System.out.println(list.size()
 					+ "data type obtenidos para "+propertyUri+".");

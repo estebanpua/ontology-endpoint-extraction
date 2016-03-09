@@ -90,6 +90,12 @@ public class OntologyData {
 		ranges.get(property).add(datatype);
 	}
 	
+	public void addDataType(String datatype_) {
+		
+		datatype.add(datatype_);
+		
+	}
+	
 	
 	
 	public Set<String> getPropertiesFromClass(String class_) {
