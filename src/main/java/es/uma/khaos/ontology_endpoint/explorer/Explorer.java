@@ -136,18 +136,13 @@ public class Explorer {
 		}
 		
 		for (String propertyUri : endpointOntology.getProperties()) {
-			System.out.println("xuxa1:"+  propertyUri);
 			list = getDataTypeFromProperty(propertyUri);
 			for (QuerySolution qs : list) {
-				System.out.println("PUA CABREADO");
-				System.out.println(qs.getResource("datatype"));
-				System.out.println("PUAAAAA");
-				System.out.println(qs.getResource(Constants.DATA_TYPE_VAR));
 				Resource resource = qs.getResource(Constants.DATA_TYPE_VAR);
 				if (resource!=null) {
 					String rangeUri = resource.getURI();
 					endpointOntology.addRangeDataType(propertyUri, rangeUri);
-					endpointOntology.addDataType(propertyUri);
+					endpointOntology.addDataType(rangeUri);
 				}
 				
 			}
