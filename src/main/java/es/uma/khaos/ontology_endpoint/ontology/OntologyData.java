@@ -15,11 +15,14 @@ public class OntologyData {
 	
 	private Map<String, Set<String>> ranges;
 	
+	private Set<String> datatype;// Create set of data types
+	
 	public OntologyData() {
 		classes = new HashSet<String>();
 		properties = new HashSet<String>();
 		domains = new HashMap<String, Set<String>>();
 		ranges = new HashMap<String, Set<String>>();
+		datatype = new HashSet<String>(); //HashSet for data types
 	}
 
 	public Set<String> getClasses() {
@@ -34,15 +37,19 @@ public class OntologyData {
 		return domains;
 	}
 	
+	public Map<String, Set<String>> getRanges() {
+		return ranges;
+	}
+
+	public Set<String> getDatatype() {
+		return datatype;
+	}
+	
 	public Set<String> getDomain(String property) {
 		if (domains.containsKey(property))
 			return domains.get(property);
 		else
 			return new HashSet<String>();
-	}
-
-	public Map<String, Set<String>> getRanges() {
-		return ranges;
 	}
 	
 	public Set<String> getRange(String property) {
@@ -51,6 +58,7 @@ public class OntologyData {
 		else
 			return new HashSet<String>();
 	}
+	
 	
 	public void addClass(String class_) {
 		classes.add(class_);
@@ -73,6 +81,16 @@ public class OntologyData {
 		}
 		ranges.get(property).add(class_);
 	}
+	
+	// A–adir datatype a rango de propiedad
+	public void addRangeDataType(String property, String datatype) {
+		if (!ranges.containsKey(property)) {
+			ranges.put(property, new HashSet<String>());
+		}
+		ranges.get(property).add(datatype);
+	}
+	
+	
 	
 	public Set<String> getPropertiesFromClass(String class_) {
 		Set<String> res = new HashSet<String>();

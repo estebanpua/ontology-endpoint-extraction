@@ -65,6 +65,11 @@ public class Explorer {
 		return executeQuery(String.format(Constants.RANGE_QUERY, property));
 	}
 	
+	public List<QuerySolution> geDataTypeFromProperty(String property) {
+		return executeQuery(String.format(Constants.DATA_TYPE_QUERY, property));
+	}
+	
+	
 	/*
 	public List<QuerySolution> getPredicatesFromClass(String classUri, int limit) {
 		String queryString =
@@ -126,6 +131,16 @@ public class Explorer {
 			}
 			System.out.println(list.size()
 					+ " rangos obtenidos para "+propertyUri+".");
+		}
+		
+		for (String propertyUri : endpointOntology.getProperties()) {
+			list = getRangesFromProperty(propertyUri);
+			for (QuerySolution qs : list) {
+				String rangeUri = qs.getResource(Constants.DATA_TYPE_VAR).getURI();
+				endpointOntology.addRangeDataType(propertyUri, rangeUri);
+			}
+			System.out.println(list.size()
+					+ " rangos data type obtenidos para "+propertyUri+".");
 		}
 		
 		return endpointOntology;

@@ -8,6 +8,10 @@ import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLDataFactory;
+import org.semanticweb.owlapi.model.OWLDataProperty;
+import org.semanticweb.owlapi.model.OWLDataPropertyDomainAxiom;
+import org.semanticweb.owlapi.model.OWLDataPropertyRangeAxiom;
+import org.semanticweb.owlapi.model.OWLDataRange;
 import org.semanticweb.owlapi.model.OWLObjectProperty;
 import org.semanticweb.owlapi.model.OWLObjectPropertyDomainAxiom;
 import org.semanticweb.owlapi.model.OWLObjectPropertyRangeAxiom;
@@ -55,6 +59,13 @@ public final class OntologyUtils {
 		}
 		ps.println();
 		
+		
+		ps.println("DataTypes:");
+		for (String datatype: ontologyData.getDatatype()) {
+			ps.println("\t"+datatype);
+		}
+		ps.println();
+		
 	}
 	
 	public static void buildOwlFile(OntologyData ontologyData, File file) throws OWLOntologyCreationException, OWLOntologyStorageException {
@@ -93,6 +104,34 @@ public final class OntologyUtils {
 				}
 			}
 			
+		}
+		
+		for (String property : ontologyData.getProperties()) {
+			
+			OWLDataProperty owlDataProperty = factory.getOWLDataProperty(IRI.create(property));
+			OWLAxiom declareDataProperty = factory.getOWLDeclarationAxiom(owlDataProperty);
+			manager.addAxiom(ont, declareDataProperty);
+
+			if (ontologyData.getDomains().containsKey(property)) {
+				for (String domain : ontologyData.getDomains().get(property)) {
+					OWLClass domainClass = factory.getOWLClass(IRI.create(domain));
+			        OWLDataPropertyDomainAxiom domainAxiom =
+			        		factory.getOWLDataPropertyDomainAxiom(owlDataProperty, domainClass);
+			        manager.addAxiom(ont, domainAxiom);
+				}
+			}
+
+			if (ontologyData.getDatatype().contains(property)) {
+				for (String range : ontologyData.getDatatype()) {
+					OWLDataRange rangeDataType = factory.getOWLDatatype(IRI.create(range));
+			        OWLDataPropertyRangeAxiom rangeAxiomDataType =
+			        		factory.getOWLDataPropertyRangeAxiom(owlDataProperty, rangeDataType);
+			        manager.addAxiom(ont,  rangeAxiomDataType);
+				}
+			}
+
+		
+		
 		}
 		
 		manager.saveOntology(ont, IRI.create(file.toURI()));
