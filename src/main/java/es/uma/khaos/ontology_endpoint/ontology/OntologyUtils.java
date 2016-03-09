@@ -3,6 +3,8 @@ package es.uma.khaos.ontology_endpoint.ontology;
 import java.io.File;
 import java.io.PrintStream;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLAxiom;
@@ -97,6 +99,28 @@ public final class OntologyUtils {
 		
 		manager.saveOntology(ont, IRI.create(file.toURI()));
 		
+	}
+	
+	public static JSONObject buildJson(OntologyData ontologyData) {
+		
+		JSONArray classes = new JSONArray();
+		for (String class_ : ontologyData.getClasses()) {
+			classes.put(new JSONObject()
+					.put("uri", class_));
+		}
+		
+		JSONArray properties = new JSONArray();
+		for (String property : ontologyData.getProperties()) {
+			properties.put(new JSONObject()
+					.put("uri", property));
+		}
+		
+		JSONObject res = new JSONObject()
+				.put("classes", classes)
+				.put("properties", properties);
+		
+		return res;
+
 	}
 
 }
