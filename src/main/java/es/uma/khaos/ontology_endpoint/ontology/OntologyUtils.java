@@ -168,9 +168,17 @@ public final class OntologyUtils {
 
 			JSONArray domains = new JSONArray();
 			for (String property : ontologyData.getPropertiesFromClass(class_)) {
-				domains.put(new JSONObject()
-						.put("type", "property")
-						.put("uri", property));
+				if (ontologyData.getObjectproperties().contains(property)) {
+					domains.put(new JSONObject()
+							.put("type", "object_property")
+							.put("uri", property));
+				}
+				if (ontologyData.getDataproperties().contains(property)) {
+					domains.put(new JSONObject()
+							.put("type", "object_property")
+							.put("uri", property));
+				}
+				
 			}
 			
 			JSONArray ranges = new JSONArray();
