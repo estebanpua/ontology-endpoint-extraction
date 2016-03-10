@@ -103,16 +103,50 @@ public final class OntologyUtils {
 	
 	public static JSONObject buildJson(OntologyData ontologyData) {
 		
-		JSONArray classes = new JSONArray();
+		JSONObject classes = new JSONObject();
 		for (String class_ : ontologyData.getClasses()) {
-			classes.put(new JSONObject()
+
+			JSONArray domains = new JSONArray();
+			for (String property : ontologyData.getPropertiesFromClass(class_)) {
+				domains.put(new JSONObject()
+						.put("type", "property")
+						.put("uri", property));
+			}
+			
+			JSONArray ranges = new JSONArray();
+			for (String property : ontologyData.getPropertiesToClass(class_)) {
+				ranges.put(new JSONObject()
+						.put("type", "property")
+						.put("uri", property));
+			}
+			
+			classes.put(class_, new JSONObject()
+					.put("domain", domains)
+					.put("range", ranges)
 					.put("uri", class_));
 		}
 		
-		JSONArray properties = new JSONArray();
+		JSONObject properties = new JSONObject();
 		for (String property : ontologyData.getProperties()) {
-			properties.put(new JSONObject()
-					.put("uri", property));
+			
+			JSONArray domains = new JSONArray();
+			for (String domain : ontologyData.getDomain(property)) {
+				domains.put(new JSONObject()
+						.put("type", "class")
+						.put("uri", domain));
+			}
+			
+			JSONArray ranges = new JSONArray();
+			for (String range : ontologyData.getRange(property)) {
+				ranges.put(new JSONObject()
+						.put("type", "class")
+						.put("uri", range));
+			}
+			
+			properties.put(property, new JSONObject()
+					.put("domain", domains)
+					.put("range", ranges)
+					.put("uri", property));;
 		}
 		
 		JSONObject res = new JSONObject()
