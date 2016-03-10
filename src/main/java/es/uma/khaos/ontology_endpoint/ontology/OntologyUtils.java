@@ -102,7 +102,7 @@ public final class OntologyUtils {
 		
 		System.out.println("Create properties");
 		
-		for (String property : ontologyData.getProperties()) {
+		for (String property : ontologyData.getObjectproperties()) {
 			OWLObjectProperty owlObjectProperty = factory.getOWLObjectProperty(IRI.create(property));
 			OWLAxiom declareObjectProperty = factory.getOWLDeclarationAxiom(owlObjectProperty);
 			manager.addAxiom(ont, declareObjectProperty);
