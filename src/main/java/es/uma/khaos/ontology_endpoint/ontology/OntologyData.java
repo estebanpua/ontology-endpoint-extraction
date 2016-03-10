@@ -40,11 +40,11 @@ public class OntologyData {
 		return properties;
 	}
 
-	public Set<String> getObjectproperties() {
+	public Set<String> getObjectProperties() {
 		return objectProperties;
 	}
 
-	public Set<String> getDataproperties() {
+	public Set<String> getDataProperties() {
 		return dataProperties;
 	}
 

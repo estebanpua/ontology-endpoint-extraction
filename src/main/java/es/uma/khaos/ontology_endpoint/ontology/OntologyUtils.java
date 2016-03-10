@@ -59,27 +59,23 @@ public final class OntologyUtils {
 		}
 		ps.println();
 		
-		
 		ps.println("DataTypes:");
 		for (String datatype: ontologyData.getDatatype()) {
 			ps.println("\t"+datatype);
 		}
 		ps.println();
 		
-		
 		ps.println("ObjectProperties:");
-		for (String objectproperties: ontologyData.getObjectproperties()) {
+		for (String objectproperties: ontologyData.getObjectProperties()) {
 			ps.println("\t"+objectproperties);
 		}
 		ps.println();
 		
 		ps.println("DataProperties:");
-		for (String dataproperties: ontologyData.getDataproperties()) {
+		for (String dataproperties: ontologyData.getDataProperties()) {
 			ps.println("\t"+dataproperties);
 		}
 		ps.println();
-		
-		
 		
 	}
 	
