@@ -73,12 +73,7 @@ public class OntologyData {
 		else
 			return new HashSet<String>();
 	}
-	
 
-	
-	
-	
-	
 	public void addClass(String class_) {
 		classes.add(class_);
 	}
@@ -94,42 +89,24 @@ public class OntologyData {
 		domains.get(property).add(class_);
 	}
 	
-	public void addRange(String property, String class_) {
+	public void addRange(String property, String range) {
 		if (!ranges.containsKey(property)) {
 			ranges.put(property, new HashSet<String>());
 		}
-		ranges.get(property).add(class_);
-	}
-	
-	// A–adir datatype a rango de propiedad
-	public void addRangeDataType(String property, String datatype) {
-		if (!ranges.containsKey(property)) {
-			ranges.put(property, new HashSet<String>());
-		}
-		ranges.get(property).add(datatype);
+		ranges.get(property).add(range);
 	}
 	
 	public void addDataType(String datatype_) {
-		
 		datatypes.add(datatype_);
-		
 	}
 	
 	public void addDataProperty(String dataproperty_) {
-		
 		dataProperties.add(dataproperty_);
-		
 	}
-	
 	
 	public void addObjectProperty(String objectproperty_) {
-		
 		objectProperties.add(objectproperty_);
-		
 	}
-	
-	
-	
 	
 	public Set<String> getPropertiesFromClass(String class_) {
 		Set<String> res = new HashSet<String>();
