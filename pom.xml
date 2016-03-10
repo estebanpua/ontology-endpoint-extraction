@@ -33,5 +33,10 @@
 	    <artifactId>owlapi-distribution</artifactId>
 	    <version>4.1.4</version>
 	</dependency>
+	<dependency>
+	  <groupId>org.json</groupId>
+	  <artifactId>json</artifactId>
+	  <version>20160212</version>
+	</dependency>
   </dependencies>
 </project>
