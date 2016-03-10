@@ -11,15 +11,25 @@ public class OntologyData {
 	
 	private Set<String> properties;
 	
+	private Set<String> objectProperties;
+	
+	private Set<String> dataProperties;
+	
 	private Map<String, Set<String>> domains;
 	
 	private Map<String, Set<String>> ranges;
+	
+	private Set<String> datatypes;// Create set of data types
 	
 	public OntologyData() {
 		classes = new HashSet<String>();
 		properties = new HashSet<String>();
 		domains = new HashMap<String, Set<String>>();
 		ranges = new HashMap<String, Set<String>>();
+		datatypes = new HashSet<String>(); //HashSet for data types
+		objectProperties = new HashSet<String>();
+		dataProperties = new HashSet<String>();
+		
 	}
 
 	public Set<String> getClasses() {
@@ -30,8 +40,24 @@ public class OntologyData {
 		return properties;
 	}
 
+	public Set<String> getObjectproperties() {
+		return objectProperties;
+	}
+
+	public Set<String> getDataproperties() {
+		return dataProperties;
+	}
+
 	public Map<String, Set<String>> getDomains() {
 		return domains;
+	}
+	
+	public Map<String, Set<String>> getRanges() {
+		return ranges;
+	}
+
+	public Set<String> getDatatype() {
+		return datatypes;
 	}
 	
 	public Set<String> getDomain(String property) {
@@ -40,10 +66,6 @@ public class OntologyData {
 		else
 			return new HashSet<String>();
 	}
-
-	public Map<String, Set<String>> getRanges() {
-		return ranges;
-	}
 	
 	public Set<String> getRange(String property) {
 		if (ranges.containsKey(property))
@@ -51,7 +73,7 @@ public class OntologyData {
 		else
 			return new HashSet<String>();
 	}
-	
+
 	public void addClass(String class_) {
 		classes.add(class_);
 	}
@@ -67,11 +89,23 @@ public class OntologyData {
 		domains.get(property).add(class_);
 	}
 	
-	public void addRange(String property, String class_) {
+	public void addRange(String property, String range) {
 		if (!ranges.containsKey(property)) {
 			ranges.put(property, new HashSet<String>());
 		}
-		ranges.get(property).add(class_);
+		ranges.get(property).add(range);
+	}
+	
+	public void addDataType(String datatype_) {
+		datatypes.add(datatype_);
+	}
+	
+	public void addDataProperty(String dataproperty_) {
+		dataProperties.add(dataproperty_);
+	}
+	
+	public void addObjectProperty(String objectproperty_) {
+		objectProperties.add(objectproperty_);
 	}
 	
 	public Set<String> getPropertiesFromClass(String class_) {

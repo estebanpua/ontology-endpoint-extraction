@@ -1,8 +1,10 @@
 package es.uma.khaos.ontology_endpoint.explorer;
 
 import java.util.List;
+import java.util.Set;
 
 import com.hp.hpl.jena.query.QuerySolution;
+import com.hp.hpl.jena.rdf.model.Resource;
 
 import es.uma.khaos.ontology_endpoint.config.Constants;
 import es.uma.khaos.ontology_endpoint.ontology.OntologyData;
@@ -63,6 +65,10 @@ public class Explorer {
 	
 	public List<QuerySolution> getRangesFromProperty(String property) {
 		return executeQuery(String.format(Constants.RANGE_QUERY, property));
+	}
+	
+	public List<QuerySolution> getDataTypeFromProperty(String property) {
+		return executeQuery(String.format(Constants.DATA_TYPE_QUERY, property));
 	}
 	
 	/*
@@ -126,6 +132,37 @@ public class Explorer {
 			}
 			System.out.println(list.size()
 					+ " rangos obtenidos para "+propertyUri+".");
+		}
+		
+		for (String propertyUri : endpointOntology.getProperties()) {
+			list = getDataTypeFromProperty(propertyUri);
+			for (QuerySolution qs : list) {
+				Resource resource = qs.getResource(Constants.DATA_TYPE_VAR);
+				if (resource!=null) {
+					String rangeUri = resource.getURI();
+					endpointOntology.addRange(propertyUri, rangeUri);
+					endpointOntology.addDataType(rangeUri);
+				}
+				
+			}
+			System.out.println(list.size()
+					+ " datatypes obtenidos para "+propertyUri+".");
+		}
+		
+		for (String propertyUri : endpointOntology.getProperties()) {
+			
+			Set<String> ranges = endpointOntology.getRange(propertyUri);
+			
+			for (String range : ranges) {
+				
+				if (endpointOntology.getClasses().contains(range)) {
+					endpointOntology.addObjectProperty(propertyUri);
+				}
+				
+				if (endpointOntology.getDatatype().contains(range)) {
+					endpointOntology.addDataProperty(propertyUri);
+				}
+			}
 		}
 		
 		return endpointOntology;
