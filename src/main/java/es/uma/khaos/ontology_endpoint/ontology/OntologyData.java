@@ -128,4 +128,12 @@ public class OntologyData {
 		return res;
 	}
 	
+	public boolean isDataProperty(String property) {
+		return dataProperties.contains(property);
+	}
+	
+	public boolean isObjectProperty(String property) {
+		return objectProperties.contains(property);
+	}
+	
 }
