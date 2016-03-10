@@ -98,7 +98,7 @@ public final class OntologyUtils {
 		
 		System.out.println("Create properties");
 		
-		for (String property : ontologyData.getObjectproperties()) {
+		for (String property : ontologyData.getObjectProperties()) {
 			OWLObjectProperty owlObjectProperty = factory.getOWLObjectProperty(IRI.create(property));
 			OWLAxiom declareObjectProperty = factory.getOWLDeclarationAxiom(owlObjectProperty);
 			manager.addAxiom(ont, declareObjectProperty);
@@ -123,8 +123,10 @@ public final class OntologyUtils {
 			
 		}
 		
-		/*for (String property : ontologyData.getProperties()) {
+		for (String property : ontologyData.getDataProperties()) {
 			
+			
+			System.out.println("Data property " + property);
 			OWLDataProperty owlDataProperty = factory.getOWLDataProperty(IRI.create(property));
 			OWLAxiom declareDataProperty = factory.getOWLDeclarationAxiom(owlDataProperty);
 			manager.addAxiom(ont, declareDataProperty);
@@ -138,18 +140,19 @@ public final class OntologyUtils {
 				}
 			}
 
-			if (ontologyData.getDatatype().contains(property)) {
+			if (ontologyData.getRanges().containsKey(property)) {
 				for (String range : ontologyData.getDatatype()) {
+					System.out.println("datatype" + ontologyData.getDatatype());
 					OWLDataRange rangeDataType = factory.getOWLDatatype(IRI.create(range));
 			        OWLDataPropertyRangeAxiom rangeAxiomDataType =
 			        		factory.getOWLDataPropertyRangeAxiom(owlDataProperty, rangeDataType);
-			        manager.addAxiom(ont,  rangeAxiomDataType);
+			        manager.addAxiom(ont,rangeAxiomDataType);
 				}
 			}
 
 		
 		
-		}*/
+		}
 		
 		manager.saveOntology(ont, IRI.create(file.toURI()));
 		
