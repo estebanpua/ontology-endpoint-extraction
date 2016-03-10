@@ -11,24 +11,24 @@ public class OntologyData {
 	
 	private Set<String> properties;
 	
-	private Set<String> objectproperties;
+	private Set<String> objectProperties;
 	
-	private Set<String> dataproperties;
+	private Set<String> dataProperties;
 	
 	private Map<String, Set<String>> domains;
 	
 	private Map<String, Set<String>> ranges;
 	
-	private Set<String> datatype;// Create set of data types
+	private Set<String> datatypes;// Create set of data types
 	
 	public OntologyData() {
 		classes = new HashSet<String>();
 		properties = new HashSet<String>();
 		domains = new HashMap<String, Set<String>>();
 		ranges = new HashMap<String, Set<String>>();
-		datatype = new HashSet<String>(); //HashSet for data types
-		objectproperties = new HashSet<String>();
-		dataproperties = new HashSet<String>();
+		datatypes = new HashSet<String>(); //HashSet for data types
+		objectProperties = new HashSet<String>();
+		dataProperties = new HashSet<String>();
 		
 	}
 
@@ -41,11 +41,11 @@ public class OntologyData {
 	}
 
 	public Set<String> getObjectproperties() {
-		return objectproperties;
+		return objectProperties;
 	}
 
 	public Set<String> getDataproperties() {
-		return dataproperties;
+		return dataProperties;
 	}
 
 	public Map<String, Set<String>> getDomains() {
@@ -57,7 +57,7 @@ public class OntologyData {
 	}
 
 	public Set<String> getDatatype() {
-		return datatype;
+		return datatypes;
 	}
 	
 	public Set<String> getDomain(String property) {
@@ -111,20 +111,20 @@ public class OntologyData {
 	
 	public void addDataType(String datatype_) {
 		
-		datatype.add(datatype_);
+		datatypes.add(datatype_);
 		
 	}
 	
 	public void addDataProperty(String dataproperty_) {
 		
-		dataproperties.add(dataproperty_);
+		dataProperties.add(dataproperty_);
 		
 	}
 	
 	
 	public void addObjectProperty(String objectproperty_) {
 		
-		objectproperties.add(objectproperty_);
+		objectProperties.add(objectproperty_);
 		
 	}
 	
