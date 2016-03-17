@@ -1,49 +1,31 @@
-package es.uma.khaos.endpoint_browser;
+package es.uma.khaos.ontology_endpoint.explorer;
+
 import java.util.List;
+import java.util.Set;
 
 import com.hp.hpl.jena.query.QuerySolution;
+import com.hp.hpl.jena.rdf.model.Resource;
 
+import es.uma.khaos.ontology_endpoint.config.Constants;
+import es.uma.khaos.ontology_endpoint.ontology.OntologyData;
+import es.uma.khaos.ontology_endpoint.sparql.SPARQLExecution;
 
 public class Explorer {
 	
-	private final String CLASS_QUERY =
-			"select distinct ?class "
-			+ "where {"
-			+ "?s a ?class"
-			+ "}";
-	
-	private final String PROPERTY_QUERY =
-			"select distinct ?property "
-			+ "where {"
-			+ "?s ?property ?o"
-			+ "}";
-	
-	private final String DOMAIN_QUERY =
-			"select distinct ?domain "
-			+ "where {"
-			+ "?o <%s> ?range."
-			+ "?o a ?domain."
-			+ "}";
-	
-	private final String RANGE_QUERY =
-			"select distinct ?range "
-			+ "where {"
-			+ "?domain <%s> ?o."
-			+ "?o a ?range."
-			+ "}";
-	
-	
 	private final String endpoint;
-	private final String graph;
+	private String graph = null;
 	private final int timeout = 60000;
 	
 	public Explorer(String endpoint) {
 		this.endpoint = endpoint;
-		this.graph = null;
 	}
 	
 	public Explorer(String endpoint, String graph) {
-		this.endpoint = endpoint;
+		this(endpoint);
+		this.graph = graph;
+	}
+	
+	public void setGraph(String graph) {
 		this.graph = graph;
 	}
 	
@@ -70,19 +52,23 @@ public class Explorer {
 //	}
 	
 	public List<QuerySolution> getClasses() {
-		return executeQuery(CLASS_QUERY);
+		return executeQuery(Constants.CLASS_QUERY);
 	}
 	
 	public List<QuerySolution> getProperties() {
-		return executeQuery(PROPERTY_QUERY);
+		return executeQuery(Constants.PROPERTY_QUERY);
 	}
 	
 	public List<QuerySolution> getDomainsFromProperty(String property) {
-		return executeQuery(String.format(DOMAIN_QUERY, property));
+		return executeQuery(String.format(Constants.DOMAIN_QUERY, property));
 	}
 	
 	public List<QuerySolution> getRangesFromProperty(String property) {
-		return executeQuery(String.format(RANGE_QUERY, property));
+		return executeQuery(String.format(Constants.RANGE_QUERY, property));
+	}
+	
+	public List<QuerySolution> getDataTypeFromProperty(String property) {
+		return executeQuery(String.format(Constants.DATA_TYPE_QUERY, property));
 	}
 	
 	/*
@@ -109,43 +95,74 @@ public class Explorer {
 	}
 	*/
 	
-	public EndpointOntology buildOntologyFromEndpoint() {
+	public OntologyData execute() {
 		
-		EndpointOntology endpointOntology = new EndpointOntology();
+		OntologyData endpointOntology = new OntologyData();
 		List<QuerySolution> list;
 		
 		list = getClasses();
 		for (QuerySolution qs : list) {
-			String classUri = qs.getResource("class").getURI();
+			String classUri = qs.getResource(Constants.CLASS_VAR).getURI();
 			endpointOntology.addClass(classUri);
 		}
-		System.out.println(list.size() + " clases obtenidas.");
+		System.out.println(list.size() + " classes obtained.");
 		
 		list = getProperties();
 		for (QuerySolution qs : list) {
-			String propertyUri = qs.getResource("property").getURI();
+			String propertyUri = qs.getResource(Constants.PROPERTY_VAR).getURI();
 			endpointOntology.addProperty(propertyUri);
 		}
-		System.out.println(list.size() + " propiedades encontradas.");
+		System.out.println(list.size() + " properties found.");
 		
 		for (String propertyUri : endpointOntology.getProperties()) {
 			list = getDomainsFromProperty(propertyUri);
 			for (QuerySolution qs : list) {
-				String domainUri = qs.getResource("domain").getURI();
+				String domainUri = qs.getResource(Constants.DOMAIN_VAR).getURI();
 				endpointOntology.addDomain(propertyUri, domainUri);
 			}
 			System.out.println(list.size()
-					+ " dominios obtenidos para "+propertyUri+".");
+					+ " domains obtained for "+propertyUri+".");
 		}
 		
 		for (String propertyUri : endpointOntology.getProperties()) {
 			list = getRangesFromProperty(propertyUri);
 			for (QuerySolution qs : list) {
-				String rangeUri = qs.getResource("range").getURI();
+				String rangeUri = qs.getResource(Constants.RANGE_VAR).getURI();
 				endpointOntology.addRange(propertyUri, rangeUri);
 			}
 			System.out.println(list.size()
-					+ " rangos obtenidos para "+propertyUri+".");
+					+ " ranges obtained for "+propertyUri+".");
+		}
+		
+		for (String propertyUri : endpointOntology.getProperties()) {
+			list = getDataTypeFromProperty(propertyUri);
+			for (QuerySolution qs : list) {
+				Resource resource = qs.getResource(Constants.DATA_TYPE_VAR);
+				if (resource!=null) {
+					String rangeUri = resource.getURI();
+					endpointOntology.addRange(propertyUri, rangeUri);
+					endpointOntology.addDataType(rangeUri);
+				}
+				
+			}
+			System.out.println(list.size()
+					+ " datatypes obtained for "+propertyUri+".");
+		}
+		
+		for (String propertyUri : endpointOntology.getProperties()) {
+			
+			Set<String> ranges = endpointOntology.getRange(propertyUri);
+			
+			for (String range : ranges) {
+				
+				if (endpointOntology.getClasses().contains(range)) {
+					endpointOntology.addObjectProperty(propertyUri);
+				}
+				
+				if (endpointOntology.getDatatype().contains(range)) {
+					endpointOntology.addDataProperty(propertyUri);
+				}
+			}
 		}
 		
 		return endpointOntology;

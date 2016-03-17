@@ -1,4 +1,5 @@
-package es.uma.khaos.endpoint_browser;
+package es.uma.khaos.ontology_endpoint.sparql;
+
 import java.util.List;
 
 import com.hp.hpl.jena.query.Query;
@@ -9,8 +10,10 @@ import com.hp.hpl.jena.query.QuerySolution;
 import com.hp.hpl.jena.query.ResultSet;
 import com.hp.hpl.jena.query.ResultSetFormatter;
 
-
-public class SPARQLExecution {
+public final class SPARQLExecution {
+	
+	private SPARQLExecution() {
+	}
 	
 	public static List<QuerySolution> executeSelect(String endpoint, String queryString) {
 		
@@ -79,6 +82,10 @@ public class SPARQLExecution {
 
 	    return resultList;
 		
+	}
+	
+	public Object clone() throws CloneNotSupportedException {
+		throw new CloneNotSupportedException();
 	}
 
 }
