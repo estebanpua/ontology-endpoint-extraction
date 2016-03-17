@@ -105,14 +105,14 @@ public class Explorer {
 			String classUri = qs.getResource(Constants.CLASS_VAR).getURI();
 			endpointOntology.addClass(classUri);
 		}
-		System.out.println(list.size() + " clases obtenidas.");
+		System.out.println(list.size() + " classes obtained.");
 		
 		list = getProperties();
 		for (QuerySolution qs : list) {
 			String propertyUri = qs.getResource(Constants.PROPERTY_VAR).getURI();
 			endpointOntology.addProperty(propertyUri);
 		}
-		System.out.println(list.size() + " propiedades encontradas.");
+		System.out.println(list.size() + " properties found.");
 		
 		for (String propertyUri : endpointOntology.getProperties()) {
 			list = getDomainsFromProperty(propertyUri);
@@ -121,7 +121,7 @@ public class Explorer {
 				endpointOntology.addDomain(propertyUri, domainUri);
 			}
 			System.out.println(list.size()
-					+ " dominios obtenidos para "+propertyUri+".");
+					+ " domains obtained for "+propertyUri+".");
 		}
 		
 		for (String propertyUri : endpointOntology.getProperties()) {
@@ -131,7 +131,7 @@ public class Explorer {
 				endpointOntology.addRange(propertyUri, rangeUri);
 			}
 			System.out.println(list.size()
-					+ " rangos obtenidos para "+propertyUri+".");
+					+ " ranges obtained for "+propertyUri+".");
 		}
 		
 		for (String propertyUri : endpointOntology.getProperties()) {
@@ -146,7 +146,7 @@ public class Explorer {
 				
 			}
 			System.out.println(list.size()
-					+ " datatypes obtenidos para "+propertyUri+".");
+					+ " datatypes obtained for "+propertyUri+".");
 		}
 		
 		for (String propertyUri : endpointOntology.getProperties()) {

@@ -84,22 +84,17 @@ public final class OntologyUtils {
 	public static void buildOwlFile(OntologyData ontologyData, File file) throws OWLOntologyCreationException, OWLOntologyStorageException {
 		
 		OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
-		//IRI ontologyIRI = IRI.create("http://khaos.uma.es/endpoint.owl#");
 		OWLOntology ont = manager.createOntology();
 		OWLDataFactory factory = manager.getOWLDataFactory();
 		
-		
-		System.out.println("Create classes");
-
-		for (String class_ : ontologyData.getClasses()) { // Getting all classes to create classes in ontology.
+		System.out.println("Creating classes...");
+		for (String class_ : ontologyData.getClasses()) {
 			OWLClass owlClass = factory.getOWLClass(IRI.create(class_));
 			OWLAxiom declareClass = factory.getOWLDeclarationAxiom(owlClass);
 			manager.addAxiom(ont, declareClass);
 		}
 		
-		
-		System.out.println("Create properties");
-		
+		System.out.println("Creating object properties...");
 		for (String property : ontologyData.getObjectProperties()) {
 			OWLObjectProperty owlObjectProperty = factory.getOWLObjectProperty(IRI.create(property));
 			OWLAxiom declareObjectProperty = factory.getOWLDeclarationAxiom(owlObjectProperty);
@@ -125,10 +120,9 @@ public final class OntologyUtils {
 			
 		}
 		
+		System.out.println("Creating data properties...");
 		for (String property : ontologyData.getDataProperties()) {
 			
-			
-			System.out.println("Data property " + property);
 			OWLDataProperty owlDataProperty = factory.getOWLDataProperty(IRI.create(property));
 			OWLAxiom declareDataProperty = factory.getOWLDeclarationAxiom(owlDataProperty);
 			manager.addAxiom(ont, declareDataProperty);
@@ -144,19 +138,18 @@ public final class OntologyUtils {
 
 			if (ontologyData.getRanges().containsKey(property)) {
 				for (String range : ontologyData.getDatatype()) {
-					System.out.println("datatype" + ontologyData.getDatatype());
 					OWLDataRange rangeDataType = factory.getOWLDatatype(IRI.create(range));
 			        OWLDataPropertyRangeAxiom rangeAxiomDataType =
 			        		factory.getOWLDataPropertyRangeAxiom(owlDataProperty, rangeDataType);
 			        manager.addAxiom(ont,rangeAxiomDataType);
 				}
 			}
-
-		
 		
 		}
 		
 		manager.saveOntology(ont, IRI.create(file.toURI()));
+		
+		System.out.println("Ontology file created!");
 		
 	}
 	
