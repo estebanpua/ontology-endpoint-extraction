@@ -13,5 +13,9 @@ public class Properties {
 	public static final String DOMAIN_VAR   = "query.domain.variable";
 	public static final String RANGE_VAR    = "query.range.variable";
 	public static final String DATA_TYPE_VAR = "query.datatype.variable";
+	
+	public static final String QUERY_TIMEOUT = "constants.query.timeout";
+	public static final String QUERY_MAX_RETRIES = "constants.query.max_retries";
+	public static final String QUERY_COOLDOWN = "constants.query.cooldown";
 
 }

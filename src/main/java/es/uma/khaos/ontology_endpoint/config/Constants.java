@@ -15,6 +15,9 @@ public class Constants {
 	public static final String DOMAIN_VAR = Configuration.getProperty(Properties.DOMAIN_VAR);
 	public static final String RANGE_VAR = Configuration.getProperty(Properties.RANGE_VAR);
 	public static final String DATA_TYPE_VAR = Configuration.getProperty(Properties.DATA_TYPE_VAR);
-
+	
+	public static final String QUERY_TIMEOUT = Configuration.getProperty(Properties.QUERY_TIMEOUT);
+	public static final String QUERY_MAX_RETRIES = Configuration.getProperty(Properties.QUERY_MAX_RETRIES);
+	public static final String QUERY_COOLDOWN = Configuration.getProperty(Properties.QUERY_COOLDOWN);
 
 }

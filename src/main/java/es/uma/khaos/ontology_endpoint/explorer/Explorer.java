@@ -1,5 +1,6 @@
 package es.uma.khaos.ontology_endpoint.explorer;
 
+import java.io.PrintStream;
 import java.util.List;
 import java.util.Set;
 
@@ -14,7 +15,10 @@ public class Explorer {
 	
 	private final String endpoint;
 	private String graph = null;
-	private final int timeout = 60000;
+	
+	private final int timeout = Integer.valueOf(Constants.QUERY_TIMEOUT);
+	private final int maxRetries = Integer.valueOf(Constants.QUERY_MAX_RETRIES);
+	private final int coolDown = Integer.valueOf(Constants.QUERY_COOLDOWN);
 	
 	public Explorer(String endpoint) {
 		this.endpoint = endpoint;
@@ -30,10 +34,19 @@ public class Explorer {
 	}
 	
 	private List<QuerySolution> executeQuery(String queryString) {
-		if (graph!=null)
-			return SPARQLExecution.executeSelect(endpoint, queryString, graph);
-		else 
-			return SPARQLExecution.executeSelect(endpoint, queryString);
+		int count = 0;
+		while(true) {
+			try {
+				if (graph!=null)
+					return SPARQLExecution.executeSelect(endpoint, queryString, graph);
+				else 
+					return SPARQLExecution.executeSelect(endpoint, queryString);
+			} catch (Exception e) {
+				e.printStackTrace();
+				if (++count == maxRetries) throw e;
+			}
+			try { Thread.sleep(coolDown); } catch (InterruptedException e) {};
+		}
 	}
 	
 	@SuppressWarnings("unused")
@@ -96,6 +109,10 @@ public class Explorer {
 	*/
 	
 	public OntologyData execute() {
+		return execute(System.out);
+	}
+	
+	public OntologyData execute(PrintStream ps) {
 		
 		OntologyData endpointOntology = new OntologyData();
 		List<QuerySolution> list;
@@ -105,14 +122,14 @@ public class Explorer {
 			String classUri = qs.getResource(Constants.CLASS_VAR).getURI();
 			endpointOntology.addClass(classUri);
 		}
-		System.out.println(list.size() + " classes obtained.");
+		ps.println(list.size() + " classes obtained.");
 		
 		list = getProperties();
 		for (QuerySolution qs : list) {
 			String propertyUri = qs.getResource(Constants.PROPERTY_VAR).getURI();
 			endpointOntology.addProperty(propertyUri);
 		}
-		System.out.println(list.size() + " properties found.");
+		ps.println(list.size() + " properties found.");
 		
 		for (String propertyUri : endpointOntology.getProperties()) {
 			list = getDomainsFromProperty(propertyUri);
@@ -120,7 +137,7 @@ public class Explorer {
 				String domainUri = qs.getResource(Constants.DOMAIN_VAR).getURI();
 				endpointOntology.addDomain(propertyUri, domainUri);
 			}
-			System.out.println(list.size()
+			ps.println(list.size()
 					+ " domains obtained for "+propertyUri+".");
 		}
 		
@@ -130,7 +147,7 @@ public class Explorer {
 				String rangeUri = qs.getResource(Constants.RANGE_VAR).getURI();
 				endpointOntology.addRange(propertyUri, rangeUri);
 			}
-			System.out.println(list.size()
+			ps.println(list.size()
 					+ " ranges obtained for "+propertyUri+".");
 		}
 		
@@ -145,7 +162,7 @@ public class Explorer {
 				}
 				
 			}
-			System.out.println(list.size()
+			ps.println(list.size()
 					+ " datatypes obtained for "+propertyUri+".");
 		}
 		
