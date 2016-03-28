@@ -18,9 +18,9 @@ public class Explorer {
 	private String graph = null;
 	
 	private final int timeout = Integer.valueOf(Constants.QUERY_TIMEOUT);
-	private final int maxRetries = Integer.valueOf(Constants.QUERY_MAX_RETRIES);
-	private final int coolDown = Integer.valueOf(Constants.QUERY_COOLDOWN);
-	private final int limit = Integer.valueOf(Constants.QUERY_LIMIT);
+	private int maxRetries = Integer.valueOf(Constants.QUERY_MAX_RETRIES);
+	private int coolDown = Integer.valueOf(Constants.QUERY_COOLDOWN);
+	private int limit = Integer.valueOf(Constants.QUERY_LIMIT);
 	
 	private final String limitQuerySufix = " LIMIT %d OFFSET %d";
 	
@@ -33,10 +33,42 @@ public class Explorer {
 		this.graph = graph;
 	}
 	
+	public String getEndpoint() {
+		return endpoint;
+	}
+
+	public String getGraph() {
+		return graph;
+	}
+
 	public void setGraph(String graph) {
 		this.graph = graph;
 	}
 	
+	public int getMaxRetries() {
+		return maxRetries;
+	}
+
+	public void setMaxRetries(int maxRetries) {
+		this.maxRetries = maxRetries;
+	}
+
+	public int getCoolDown() {
+		return coolDown;
+	}
+
+	public void setCoolDown(int coolDown) {
+		this.coolDown = coolDown;
+	}
+
+	public int getLimit() {
+		return limit;
+	}
+
+	public void setLimit(int limit) {
+		this.limit = limit;
+	}
+
 	private List<QuerySolution> executeQuery(String queryString, int offset) {
 		queryString += String.format(limitQuerySufix, limit, offset);
 		System.out.println("EXECUTING QUERY: " + queryString);
@@ -49,7 +81,7 @@ public class Explorer {
 					return SPARQLExecution.executeSelect(endpoint, queryString);
 			} catch (Exception e) {
 				e.printStackTrace();
-				//if (++count == maxRetries) throw e;
+				count++;
 			}
 			try { Thread.sleep(coolDown); } catch (InterruptedException e) {};
 		}
@@ -127,6 +159,7 @@ public class Explorer {
 				for (QuerySolution qs : list) {
 					String domainUri = qs.getResource(Constants.DOMAIN_VAR).getURI();
 					endpointOntology.addDomain(propertyUri, domainUri);
+					endpointOntology.addClass(domainUri);
 				}
 				offset += limit;
 				ps.println(list.size()
@@ -141,6 +174,7 @@ public class Explorer {
 				for (QuerySolution qs : list) {
 					String rangeUri = qs.getResource(Constants.RANGE_VAR).getURI();
 					endpointOntology.addRange(propertyUri, rangeUri);
+					endpointOntology.addClass(rangeUri);
 				}
 				offset += limit;
 				ps.println(list.size()
