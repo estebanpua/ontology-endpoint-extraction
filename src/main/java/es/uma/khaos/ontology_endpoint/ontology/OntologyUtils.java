@@ -137,11 +137,13 @@ public final class OntologyUtils {
 			}
 
 			if (ontologyData.getRanges().containsKey(property)) {
-				for (String range : ontologyData.getDatatype()) {
-					OWLDataRange rangeDataType = factory.getOWLDatatype(IRI.create(range));
-			        OWLDataPropertyRangeAxiom rangeAxiomDataType =
-			        		factory.getOWLDataPropertyRangeAxiom(owlDataProperty, rangeDataType);
-			        manager.addAxiom(ont,rangeAxiomDataType);
+				for (String range : ontologyData.getRanges().get(property)) {
+					if (ontologyData.getDatatype().contains(range)) {
+						OWLDataRange rangeDataType = factory.getOWLDatatype(IRI.create(range));
+				        OWLDataPropertyRangeAxiom rangeAxiomDataType =
+				        		factory.getOWLDataPropertyRangeAxiom(owlDataProperty, rangeDataType);
+				        manager.addAxiom(ont,rangeAxiomDataType);
+					}
 				}
 			}
 		

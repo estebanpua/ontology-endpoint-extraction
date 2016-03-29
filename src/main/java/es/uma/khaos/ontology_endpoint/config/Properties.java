@@ -17,5 +17,6 @@ public class Properties {
 	public static final String QUERY_TIMEOUT = "constants.query.timeout";
 	public static final String QUERY_MAX_RETRIES = "constants.query.max_retries";
 	public static final String QUERY_COOLDOWN = "constants.query.cooldown";
+	public static final String QUERY_LIMIT = "constants.query.limit";
 
 }

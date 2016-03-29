@@ -1,0 +1,315 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace">
+    <Ontology/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://khaos.uma.es/pathways/enzymaticActivity -->
+
+    <ObjectProperty rdf:about="http://khaos.uma.es/pathways/enzymaticActivity">
+        <rdfs:domain rdf:resource="http://khaos.uma.es/pathways/Protein"/>
+        <rdfs:range rdf:resource="http://khaos.uma.es/pathways/Enzyme"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://khaos.uma.es/pathways/enzyme -->
+
+    <ObjectProperty rdf:about="http://khaos.uma.es/pathways/enzyme">
+        <rdfs:domain rdf:resource="http://khaos.uma.es/pathways/Reaction"/>
+        <rdfs:range rdf:resource="http://khaos.uma.es/pathways/Enzyme"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://khaos.uma.es/pathways/gene -->
+
+    <ObjectProperty rdf:about="http://khaos.uma.es/pathways/gene">
+        <rdfs:domain rdf:resource="http://khaos.uma.es/pathways/Enzyme"/>
+        <rdfs:range rdf:resource="http://khaos.uma.es/pathways/Gene"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://khaos.uma.es/pathways/left -->
+
+    <ObjectProperty rdf:about="http://khaos.uma.es/pathways/left">
+        <rdfs:domain rdf:resource="http://khaos.uma.es/pathways/Reaction"/>
+        <rdfs:range rdf:resource="http://khaos.uma.es/pathways/Compound"/>
+        <rdfs:range rdf:resource="http://khaos.uma.es/pathways/Glycan"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://khaos.uma.es/pathways/organism -->
+
+    <ObjectProperty rdf:about="http://khaos.uma.es/pathways/organism">
+        <rdfs:domain rdf:resource="http://khaos.uma.es/pathways/Pathway"/>
+        <rdfs:domain rdf:resource="http://khaos.uma.es/pathways/Protein"/>
+        <rdfs:range rdf:resource="http://khaos.uma.es/pathways/Organism"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://khaos.uma.es/pathways/reaction -->
+
+    <ObjectProperty rdf:about="http://khaos.uma.es/pathways/reaction">
+        <rdfs:domain rdf:resource="http://khaos.uma.es/pathways/Pathway"/>
+        <rdfs:range rdf:resource="http://khaos.uma.es/pathways/Reaction"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://khaos.uma.es/pathways/relatedPathway -->
+
+    <ObjectProperty rdf:about="http://khaos.uma.es/pathways/relatedPathway">
+        <rdfs:domain rdf:resource="http://khaos.uma.es/pathways/Pathway"/>
+        <rdfs:range rdf:resource="http://khaos.uma.es/pathways/Pathway"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://khaos.uma.es/pathways/right -->
+
+    <ObjectProperty rdf:about="http://khaos.uma.es/pathways/right">
+        <rdfs:domain rdf:resource="http://khaos.uma.es/pathways/Reaction"/>
+        <rdfs:range rdf:resource="http://khaos.uma.es/pathways/Compound"/>
+        <rdfs:range rdf:resource="http://khaos.uma.es/pathways/Glycan"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#sameAs -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/2002/07/owl#sameAs">
+        <rdfs:range rdf:resource="http://khaos.uma.es/pathways/Compound"/>
+        <rdfs:range rdf:resource="http://khaos.uma.es/pathways/Glycan"/>
+        <rdfs:range rdf:resource="http://khaos.uma.es/pathways/Organism"/>
+        <rdfs:range rdf:resource="http://khaos.uma.es/pathways/Reaction"/>
+    </ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://khaos.uma.es/pathways/comment -->
+
+    <DatatypeProperty rdf:about="http://khaos.uma.es/pathways/comment">
+        <rdfs:domain rdf:resource="http://khaos.uma.es/pathways/Compound"/>
+        <rdfs:domain rdf:resource="http://khaos.uma.es/pathways/Organism"/>
+        <rdfs:domain rdf:resource="http://khaos.uma.es/pathways/Pathway"/>
+        <rdfs:domain rdf:resource="http://khaos.uma.es/pathways/Protein"/>
+        <rdfs:domain rdf:resource="http://khaos.uma.es/pathways/Reaction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://khaos.uma.es/pathways/ecNumber -->
+
+    <DatatypeProperty rdf:about="http://khaos.uma.es/pathways/ecNumber">
+        <rdfs:domain rdf:resource="http://khaos.uma.es/pathways/Enzyme"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://khaos.uma.es/pathways/formula -->
+
+    <DatatypeProperty rdf:about="http://khaos.uma.es/pathways/formula">
+        <rdfs:domain rdf:resource="http://khaos.uma.es/pathways/Compound"/>
+        <rdfs:domain rdf:resource="http://khaos.uma.es/pathways/Glycan"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://khaos.uma.es/pathways/geneName -->
+
+    <DatatypeProperty rdf:about="http://khaos.uma.es/pathways/geneName">
+        <rdfs:domain rdf:resource="http://khaos.uma.es/pathways/Protein"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://khaos.uma.es/pathways/id -->
+
+    <DatatypeProperty rdf:about="http://khaos.uma.es/pathways/id">
+        <rdfs:domain rdf:resource="http://khaos.uma.es/pathways/Gene"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://khaos.uma.es/pathways/keggCode -->
+
+    <DatatypeProperty rdf:about="http://khaos.uma.es/pathways/keggCode">
+        <rdfs:domain rdf:resource="http://khaos.uma.es/pathways/Organism"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://khaos.uma.es/pathways/keyword -->
+
+    <DatatypeProperty rdf:about="http://khaos.uma.es/pathways/keyword">
+        <rdfs:domain rdf:resource="http://khaos.uma.es/pathways/Protein"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://khaos.uma.es/pathways/mass -->
+
+    <DatatypeProperty rdf:about="http://khaos.uma.es/pathways/mass">
+        <rdfs:domain rdf:resource="http://khaos.uma.es/pathways/Compound"/>
+        <rdfs:domain rdf:resource="http://khaos.uma.es/pathways/Glycan"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://khaos.uma.es/pathways/metabolism -->
+
+    <DatatypeProperty rdf:about="http://khaos.uma.es/pathways/metabolism">
+        <rdfs:domain rdf:resource="http://khaos.uma.es/pathways/Pathway"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://khaos.uma.es/pathways/name -->
+
+    <DatatypeProperty rdf:about="http://khaos.uma.es/pathways/name">
+        <rdfs:domain rdf:resource="http://khaos.uma.es/pathways/Compound"/>
+        <rdfs:domain rdf:resource="http://khaos.uma.es/pathways/Enzyme"/>
+        <rdfs:domain rdf:resource="http://khaos.uma.es/pathways/Glycan"/>
+        <rdfs:domain rdf:resource="http://khaos.uma.es/pathways/Organism"/>
+        <rdfs:domain rdf:resource="http://khaos.uma.es/pathways/Pathway"/>
+        <rdfs:domain rdf:resource="http://khaos.uma.es/pathways/Protein"/>
+        <rdfs:domain rdf:resource="http://khaos.uma.es/pathways/Reaction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://khaos.uma.es/pathways/synonym -->
+
+    <DatatypeProperty rdf:about="http://khaos.uma.es/pathways/synonym">
+        <rdfs:domain rdf:resource="http://khaos.uma.es/pathways/Compound"/>
+        <rdfs:domain rdf:resource="http://khaos.uma.es/pathways/Enzyme"/>
+        <rdfs:domain rdf:resource="http://khaos.uma.es/pathways/Glycan"/>
+        <rdfs:domain rdf:resource="http://khaos.uma.es/pathways/Organism"/>
+        <rdfs:domain rdf:resource="http://khaos.uma.es/pathways/Protein"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://khaos.uma.es/pathways/uniprotID -->
+
+    <DatatypeProperty rdf:about="http://khaos.uma.es/pathways/uniprotID">
+        <rdfs:domain rdf:resource="http://khaos.uma.es/pathways/Protein"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#seeAlso -->
+
+    <DatatypeProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#seeAlso">
+        <rdfs:domain rdf:resource="http://khaos.uma.es/pathways/Gene"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://khaos.uma.es/pathways/Compound -->
+
+    <Class rdf:about="http://khaos.uma.es/pathways/Compound"/>
+    
+
+
+    <!-- http://khaos.uma.es/pathways/Enzyme -->
+
+    <Class rdf:about="http://khaos.uma.es/pathways/Enzyme"/>
+    
+
+
+    <!-- http://khaos.uma.es/pathways/Gene -->
+
+    <Class rdf:about="http://khaos.uma.es/pathways/Gene"/>
+    
+
+
+    <!-- http://khaos.uma.es/pathways/Glycan -->
+
+    <Class rdf:about="http://khaos.uma.es/pathways/Glycan"/>
+    
+
+
+    <!-- http://khaos.uma.es/pathways/Organism -->
+
+    <Class rdf:about="http://khaos.uma.es/pathways/Organism"/>
+    
+
+
+    <!-- http://khaos.uma.es/pathways/Pathway -->
+
+    <Class rdf:about="http://khaos.uma.es/pathways/Pathway"/>
+    
+
+
+    <!-- http://khaos.uma.es/pathways/Protein -->
+
+    <Class rdf:about="http://khaos.uma.es/pathways/Protein"/>
+    
+
+
+    <!-- http://khaos.uma.es/pathways/Reaction -->
+
+    <Class rdf:about="http://khaos.uma.es/pathways/Reaction"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.1.4.20160202-2327) https://github.com/owlcs/owlapi -->
+

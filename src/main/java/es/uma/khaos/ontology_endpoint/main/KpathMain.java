@@ -9,20 +9,22 @@ import es.uma.khaos.ontology_endpoint.explorer.Explorer;
 import es.uma.khaos.ontology_endpoint.ontology.OntologyData;
 import es.uma.khaos.ontology_endpoint.ontology.OntologyUtils;
 
-public class ExecuteMain {
+public class KpathMain {
 	
 	public static void main(String[] args) throws OWLOntologyCreationException, OWLOntologyStorageException {
+	
+		long timeStart, timeEnd;
+		timeStart = System.currentTimeMillis();
 		
-		String endpoint = "http://150.214.214.5/virtuoso/sparql";
-		String graph = "www.khaos.uma.es/metabolic-pathways-app";
+		String endpoint = "http://sparql.kpath.khaos.uma.es/";
+		Explorer explorer = new Explorer(endpoint);
 		
-//		String endpoint = "http://150.214.214.6/sparql";
-//		String graph = "http://khaos.uma.es/olivedb";
-		
-		Explorer explorer = new Explorer(endpoint, graph);
 		OntologyData ontology = explorer.execute();
-		OntologyUtils.print(ontology);
-		OntologyUtils.buildOwlFile(ontology, new File("endpoint.owl"));
+		OntologyUtils.buildOwlFile(ontology, new File("kpath.owl"));
+		
+		timeEnd = System.currentTimeMillis();
+		System.out.println("the task has taken "+ ( timeEnd - timeStart ) +" milliseconds");
+		
 	}
 
 }

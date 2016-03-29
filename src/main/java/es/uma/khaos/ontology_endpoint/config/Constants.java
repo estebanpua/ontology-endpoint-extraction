@@ -19,5 +19,6 @@ public class Constants {
 	public static final String QUERY_TIMEOUT = Configuration.getProperty(Properties.QUERY_TIMEOUT);
 	public static final String QUERY_MAX_RETRIES = Configuration.getProperty(Properties.QUERY_MAX_RETRIES);
 	public static final String QUERY_COOLDOWN = Configuration.getProperty(Properties.QUERY_COOLDOWN);
+	public static final String QUERY_LIMIT = Configuration.getProperty(Properties.QUERY_LIMIT);
 
 }
