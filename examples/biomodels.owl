@@ -1,0 +1,2333 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace">
+    <Ontology/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- java:org.sbml.jsbml.Unit$Kind -->
+
+    <rdfs:Datatype rdf:about="java:org.sbml.jsbml.Unit$Kind"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://biomodels.net/biology-qualifiers#isVersionOf -->
+
+    <ObjectProperty rdf:about="http://biomodels.net/biology-qualifiers#isVersionOf">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Event"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLModel"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLModel"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://biomodels.net/model-qualifiers#is -->
+
+    <ObjectProperty rdf:about="http://biomodels.net/model-qualifiers#is">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Event"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLModel"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLModel"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://biomodels.net/model-qualifiers#isDerivedFrom -->
+
+    <ObjectProperty rdf:about="http://biomodels.net/model-qualifiers#isDerivedFrom">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLModel"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLModel"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://biomodels.net/model-qualifiers#isDescribedBy -->
+
+    <ObjectProperty rdf:about="http://biomodels.net/model-qualifiers#isDescribedBy">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLModel"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLModel"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#areaUnits -->
+
+    <ObjectProperty rdf:about="http://identifiers.org/biomodels.vocabulary#areaUnits">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLModel"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#compartment -->
+
+    <ObjectProperty rdf:about="http://identifiers.org/biomodels.vocabulary#compartment">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLModel"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#FunctionDef"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#constraint -->
+
+    <ObjectProperty rdf:about="http://identifiers.org/biomodels.vocabulary#constraint">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLModel"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Constraint"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#delay -->
+
+    <ObjectProperty rdf:about="http://identifiers.org/biomodels.vocabulary#delay">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Event"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Delay"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#event -->
+
+    <ObjectProperty rdf:about="http://identifiers.org/biomodels.vocabulary#event">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLModel"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Event"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#eventAssignment -->
+
+    <ObjectProperty rdf:about="http://identifiers.org/biomodels.vocabulary#eventAssignment">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Event"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#EventAssignment"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#extentUnits -->
+
+    <ObjectProperty rdf:about="http://identifiers.org/biomodels.vocabulary#extentUnits">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLModel"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#functionDef -->
+
+    <ObjectProperty rdf:about="http://identifiers.org/biomodels.vocabulary#functionDef">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLModel"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#FunctionDef"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#inCompartment -->
+
+    <ObjectProperty rdf:about="http://identifiers.org/biomodels.vocabulary#inCompartment">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#FunctionDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#FunctionDef"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#initialAssignment -->
+
+    <ObjectProperty rdf:about="http://identifiers.org/biomodels.vocabulary#initialAssignment">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLModel"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#InitialAssignment"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#kineticLaw -->
+
+    <ObjectProperty rdf:about="http://identifiers.org/biomodels.vocabulary#kineticLaw">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#FunctionDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#FunctionDef"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#lengthUnit -->
+
+    <ObjectProperty rdf:about="http://identifiers.org/biomodels.vocabulary#lengthUnit">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLModel"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#localParameters -->
+
+    <ObjectProperty rdf:about="http://identifiers.org/biomodels.vocabulary#localParameters">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#modifier -->
+
+    <ObjectProperty rdf:about="http://identifiers.org/biomodels.vocabulary#modifier">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#InitialAssignment"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#parameter -->
+
+    <ObjectProperty rdf:about="http://identifiers.org/biomodels.vocabulary#parameter">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLModel"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#FunctionDef"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#product -->
+
+    <ObjectProperty rdf:about="http://identifiers.org/biomodels.vocabulary#product">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#FunctionDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#FunctionDef"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#reactant -->
+
+    <ObjectProperty rdf:about="http://identifiers.org/biomodels.vocabulary#reactant">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#FunctionDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#FunctionDef"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#reaction -->
+
+    <ObjectProperty rdf:about="http://identifiers.org/biomodels.vocabulary#reaction">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLModel"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#FunctionDef"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#species -->
+
+    <ObjectProperty rdf:about="http://identifiers.org/biomodels.vocabulary#species">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#FunctionDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#InitialAssignment"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLModel"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#FunctionDef"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#substanceUnits -->
+
+    <ObjectProperty rdf:about="http://identifiers.org/biomodels.vocabulary#substanceUnits">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLModel"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#symbol -->
+
+    <ObjectProperty rdf:about="http://identifiers.org/biomodels.vocabulary#symbol">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#InitialAssignment"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#timeUnits -->
+
+    <ObjectProperty rdf:about="http://identifiers.org/biomodels.vocabulary#timeUnits">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLModel"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#trigger -->
+
+    <ObjectProperty rdf:about="http://identifiers.org/biomodels.vocabulary#trigger">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Event"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Trigger"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#unit -->
+
+    <ObjectProperty rdf:about="http://identifiers.org/biomodels.vocabulary#unit">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#units -->
+
+    <ObjectProperty rdf:about="http://identifiers.org/biomodels.vocabulary#units">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#unitsDef -->
+
+    <ObjectProperty rdf:about="http://identifiers.org/biomodels.vocabulary#unitsDef">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLModel"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#variable -->
+
+    <ObjectProperty rdf:about="http://identifiers.org/biomodels.vocabulary#variable">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#EventAssignment"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#volumeUnits -->
+
+    <ObjectProperty rdf:about="http://identifiers.org/biomodels.vocabulary#volumeUnits">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLModel"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:range rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/ns/void#sparqlEndPoint -->
+
+    <ObjectProperty rdf:about="http://rdfs.org/ns/void#sparqlEndPoint">
+        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sparql-service-description#Service"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#inheritFrom -->
+
+    <ObjectProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#inheritFrom">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#item -->
+
+    <ObjectProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#item">
+        <rdfs:range rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMap"/>
+        <rdfs:range rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadStorage"/>
+        <rdfs:range rdf:resource="http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMap"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmGraphMap -->
+
+    <ObjectProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmGraphMap">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMap"/>
+        <rdfs:range rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapValue"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmObjectMap -->
+
+    <ObjectProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmObjectMap">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMap"/>
+        <rdfs:range rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapValue"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmPredicateMap -->
+
+    <ObjectProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmPredicateMap">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMap"/>
+        <rdfs:range rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapValue"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmSubjectMap -->
+
+    <ObjectProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmSubjectMap">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMap"/>
+        <rdfs:range rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapValue"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfSubFormatForRefs -->
+
+    <ObjectProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfSubFormatForRefs">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfSuperFormats -->
+
+    <ObjectProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfSuperFormats">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapFormat"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmvATables -->
+
+    <ObjectProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmvATables">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapValue"/>
+        <rdfs:range rdf:resource="http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapATable"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmvColumns -->
+
+    <ObjectProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmvColumns">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapValue"/>
+        <rdfs:range rdf:resource="http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapColumn"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmvFText -->
+
+    <ObjectProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmvFText">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapValue"/>
+        <rdfs:range rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFText"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmvFormat -->
+
+    <ObjectProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmvFormat">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapValue"/>
+        <rdfs:range rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmvGeo -->
+
+    <ObjectProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmvGeo">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapValue"/>
+        <rdfs:range rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFText"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmvftConds -->
+
+    <ObjectProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmvftConds">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFText"/>
+        <rdfs:range rdf:resource="http://www.openlinksw.com/schemas/virtrdf#array-of-string"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qsDefaultMap -->
+
+    <ObjectProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qsDefaultMap">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadStorage"/>
+        <rdfs:range rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMap"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qsUserMaps -->
+
+    <ObjectProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qsUserMaps">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadStorage"/>
+        <rdfs:range rdf:resource="http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMap"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#_1 -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapATable"/>
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapColumn"/>
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapATable"/>
+        <rdfs:range rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapColumn"/>
+        <rdfs:range rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#_2 -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#_2">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#_3 -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#_3">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#_4 -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#_4">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#_5 -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#_5">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#first -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#first">
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#type -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Constraint"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Delay"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Event"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#EventAssignment"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#FunctionDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#InitialAssignment"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLModel"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Trigger"/>
+        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#DatasetDescription"/>
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMap"/>
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapATable"/>
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapColumn"/>
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFText"/>
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapValue"/>
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadStorage"/>
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMap"/>
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapATable"/>
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapColumn"/>
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapFormat"/>
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#array-of-string"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#OntologyProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sparql-service-description#Service"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#domain -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#domain">
+        <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#OntologyProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#range -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#range">
+        <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#OntologyProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#subClassOf -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+        <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#subPropertyOf -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+        <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#complementOf -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/2002/07/owl#complementOf">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/sparql-service-description#endpoint -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/ns/sparql-service-description#endpoint">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sparql-service-description#Service"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sparql-service-description#Service"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/primaryTopic -->
+
+    <ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/primaryTopic">
+        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#DatasetDescription"/>
+        <rdfs:range rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+    </ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://biomodels.net/model-qualifiers#curated -->
+
+    <DatatypeProperty rdf:about="http://biomodels.net/model-qualifiers#curated">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLModel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#areaUnits -->
+
+    <DatatypeProperty rdf:about="http://identifiers.org/biomodels.vocabulary#areaUnits">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLModel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#boundaryCondition -->
+
+    <DatatypeProperty rdf:about="http://identifiers.org/biomodels.vocabulary#boundaryCondition">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#FunctionDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#constant -->
+
+    <DatatypeProperty rdf:about="http://identifiers.org/biomodels.vocabulary#constant">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#FunctionDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#exponent -->
+
+    <DatatypeProperty rdf:about="http://identifiers.org/biomodels.vocabulary#exponent">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#fast -->
+
+    <DatatypeProperty rdf:about="http://identifiers.org/biomodels.vocabulary#fast">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#FunctionDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#hasOnlySubstanceUnits -->
+
+    <DatatypeProperty rdf:about="http://identifiers.org/biomodels.vocabulary#hasOnlySubstanceUnits">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#FunctionDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#initialAmount -->
+
+    <DatatypeProperty rdf:about="http://identifiers.org/biomodels.vocabulary#initialAmount">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#FunctionDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#initialConcentration -->
+
+    <DatatypeProperty rdf:about="http://identifiers.org/biomodels.vocabulary#initialConcentration">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#FunctionDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#initialValue -->
+
+    <DatatypeProperty rdf:about="http://identifiers.org/biomodels.vocabulary#initialValue">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Trigger"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#kind -->
+
+    <DatatypeProperty rdf:about="http://identifiers.org/biomodels.vocabulary#kind">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+        <rdfs:range rdf:resource="java:org.sbml.jsbml.Unit$Kind"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#lengthUnit -->
+
+    <DatatypeProperty rdf:about="http://identifiers.org/biomodels.vocabulary#lengthUnit">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLModel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#message -->
+
+    <DatatypeProperty rdf:about="http://identifiers.org/biomodels.vocabulary#message">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Constraint"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#multipler -->
+
+    <DatatypeProperty rdf:about="http://identifiers.org/biomodels.vocabulary#multipler">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#name -->
+
+    <DatatypeProperty rdf:about="http://identifiers.org/biomodels.vocabulary#name">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Event"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#FunctionDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLModel"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#notes -->
+
+    <DatatypeProperty rdf:about="http://identifiers.org/biomodels.vocabulary#notes">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Event"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#EventAssignment"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#FunctionDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLModel"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#persistant -->
+
+    <DatatypeProperty rdf:about="http://identifiers.org/biomodels.vocabulary#persistant">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Trigger"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#reversible -->
+
+    <DatatypeProperty rdf:about="http://identifiers.org/biomodels.vocabulary#reversible">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#FunctionDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#scale -->
+
+    <DatatypeProperty rdf:about="http://identifiers.org/biomodels.vocabulary#scale">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#size -->
+
+    <DatatypeProperty rdf:about="http://identifiers.org/biomodels.vocabulary#size">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#FunctionDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#spatialDimensions -->
+
+    <DatatypeProperty rdf:about="http://identifiers.org/biomodels.vocabulary#spatialDimensions">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#FunctionDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#stoichiometry -->
+
+    <DatatypeProperty rdf:about="http://identifiers.org/biomodels.vocabulary#stoichiometry">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#FunctionDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#substanceUnits -->
+
+    <DatatypeProperty rdf:about="http://identifiers.org/biomodels.vocabulary#substanceUnits">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLModel"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#timeUnits -->
+
+    <DatatypeProperty rdf:about="http://identifiers.org/biomodels.vocabulary#timeUnits">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLModel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#units -->
+
+    <DatatypeProperty rdf:about="http://identifiers.org/biomodels.vocabulary#units">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#useValuesFromTriggerTime -->
+
+    <DatatypeProperty rdf:about="http://identifiers.org/biomodels.vocabulary#useValuesFromTriggerTime">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Event"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#value -->
+
+    <DatatypeProperty rdf:about="http://identifiers.org/biomodels.vocabulary#value">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#FunctionDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#Species"/>
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#volumeUnits -->
+
+    <DatatypeProperty rdf:about="http://identifiers.org/biomodels.vocabulary#volumeUnits">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLModel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/W3CDTF -->
+
+    <DatatypeProperty rdf:about="http://purl.org/dc/terms/W3CDTF">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+    <DatatypeProperty rdf:about="http://purl.org/dc/terms/created">
+        <rdfs:domain rdf:resource="http://identifiers.org/biomodels.vocabulary#SBMLModel"/>
+        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#DatasetDescription"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+    <DatatypeProperty rdf:about="http://purl.org/dc/terms/description">
+        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#DatasetDescription"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <DatatypeProperty rdf:about="http://purl.org/dc/terms/title">
+        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#DatasetDescription"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/pav/2.0/importedOn -->
+
+    <DatatypeProperty rdf:about="http://purl.org/pav/2.0/importedOn">
+        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/pav/2.0/version -->
+
+    <DatatypeProperty rdf:about="http://purl.org/pav/2.0/version">
+        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://rdfs.org/ns/void#triples -->
+
+    <DatatypeProperty rdf:about="http://rdfs.org/ns/void#triples">
+        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://rdfs.org/ns/void#uriSpace -->
+
+    <DatatypeProperty rdf:about="http://rdfs.org/ns/void#uriSpace">
+        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#isGcResistantType -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#isGcResistantType">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmTableName -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmTableName">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMap"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmf01blankOfShortTmpl -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmf01blankOfShortTmpl">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmf01uriOfShortTmpl -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmf01uriOfShortTmpl">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfBoolOfShortTmpl -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfBoolOfShortTmpl">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfBoolTmpl -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfBoolTmpl">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfCmpFuncName -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfCmpFuncName">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfColumnCount -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfColumnCount">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfCustomString1 -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfCustomString1">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfDatatypeOfShortTmpl -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfDatatypeOfShortTmpl">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfDatatypeTmpl -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfDatatypeTmpl">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfDtpOfNiceSqlval -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfDtpOfNiceSqlval">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfExistingShortOfLongTmpl -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfExistingShortOfLongTmpl">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfExistingShortOfSqlvalTmpl -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfExistingShortOfSqlvalTmpl">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfExistingShortOfTypedsqlvalTmpl -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfExistingShortOfTypedsqlvalTmpl">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfExistingShortOfUriTmpl -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfExistingShortOfUriTmpl">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfHasCheapSqlval -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfHasCheapSqlval">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfIidOfShortTmpl -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfIidOfShortTmpl">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfIsBijection -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfIsBijection">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfIsStable -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfIsStable">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfIsSubformatOfLong -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfIsSubformatOfLong">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfIsSubformatOfLongWhenEqToSql -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfIsSubformatOfLongWhenEqToSql">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfIsSubformatOfLongWhenRef -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfIsSubformatOfLongWhenRef">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfIsblankOfShortTmpl -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfIsblankOfShortTmpl">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfIslitOfShortTmpl -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfIslitOfShortTmpl">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfIsnumericOfShortTmpl -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfIsnumericOfShortTmpl">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfIsrefOfShortTmpl -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfIsrefOfShortTmpl">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfIsuriOfShortTmpl -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfIsuriOfShortTmpl">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfLanguageOfShortTmpl -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfLanguageOfShortTmpl">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfLanguageTmpl -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfLanguageTmpl">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfLongOfShortTmpl -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfLongOfShortTmpl">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfLongTmpl -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfLongTmpl">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfMapsOnlyNullToNull -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfMapsOnlyNullToNull">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfName -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfName">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfOkForAnySqlvalue -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfOkForAnySqlvalue">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfShortOfLongTmpl -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfShortOfLongTmpl">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfShortOfNiceSqlvalTmpl -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfShortOfNiceSqlvalTmpl">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfShortOfSqlvalTmpl -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfShortOfSqlvalTmpl">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfShortOfTypedsqlvalTmpl -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfShortOfTypedsqlvalTmpl">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfShortOfUriTmpl -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfShortOfUriTmpl">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfShortTmpl -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfShortTmpl">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfSparqlEbvOfShortTmpl -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfSparqlEbvOfShortTmpl">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfSparqlEbvTmpl -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfSparqlEbvTmpl">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfSqlvalOfShortTmpl -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfSqlvalOfShortTmpl">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfSqlvalTmpl -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfSqlvalTmpl">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfStrsqlvalOfShortTmpl -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfStrsqlvalOfShortTmpl">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfTypemaxTmpl -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfTypemaxTmpl">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfTypeminTmpl -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfTypeminTmpl">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfUriIdOffset -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfUriIdOffset">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfUriOfShortTmpl -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfUriOfShortTmpl">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfValRange-rvrDatatype -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfValRange-rvrDatatype">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfValRange-rvrLanguage -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfValRange-rvrLanguage">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmfWrapDistinct -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmfWrapDistinct">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmvColumnsFormKey -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmvColumnsFormKey">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapValue"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmvTableName -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmvTableName">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapValue"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmvaAlias -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmvaAlias">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapATable"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmvaTableName -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmvaTableName">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapATable"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmvcAlias -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmvcAlias">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapColumn"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmvcColumnName -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmvcColumnName">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapColumn"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmvftAlias -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmvftAlias">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFText"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmvftColumnName -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmvftColumnName">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFText"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmvftTableName -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmvftTableName">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFText"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#qmvftXmlIndex -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#qmvftXmlIndex">
+        <rdfs:domain rdf:resource="http://www.openlinksw.com/schemas/virtrdf#QuadMapFText"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#version -->
+
+    <DatatypeProperty rdf:about="http://www.openlinksw.com/schemas/virtrdf#version">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#comment -->
+
+    <DatatypeProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#comment">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#label -->
+
+    <DatatypeProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label">
+        <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#OntologyProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2001/vcard-rdf/3.0#EMAIL -->
+
+    <DatatypeProperty rdf:about="http://www.w3.org/2001/vcard-rdf/3.0#EMAIL">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2001/vcard-rdf/3.0#Family -->
+
+    <DatatypeProperty rdf:about="http://www.w3.org/2001/vcard-rdf/3.0#Family">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2001/vcard-rdf/3.0#Given -->
+
+    <DatatypeProperty rdf:about="http://www.w3.org/2001/vcard-rdf/3.0#Given">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2001/vcard-rdf/3.0#Orgname -->
+
+    <DatatypeProperty rdf:about="http://www.w3.org/2001/vcard-rdf/3.0#Orgname">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#versionInfo -->
+
+    <DatatypeProperty rdf:about="http://www.w3.org/2002/07/owl#versionInfo">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#Compartment -->
+
+    <Class rdf:about="http://identifiers.org/biomodels.vocabulary#Compartment"/>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#Constraint -->
+
+    <Class rdf:about="http://identifiers.org/biomodels.vocabulary#Constraint"/>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#Delay -->
+
+    <Class rdf:about="http://identifiers.org/biomodels.vocabulary#Delay"/>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#Event -->
+
+    <Class rdf:about="http://identifiers.org/biomodels.vocabulary#Event"/>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#EventAssignment -->
+
+    <Class rdf:about="http://identifiers.org/biomodels.vocabulary#EventAssignment"/>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#FunctionDef -->
+
+    <Class rdf:about="http://identifiers.org/biomodels.vocabulary#FunctionDef"/>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#InitialAssignment -->
+
+    <Class rdf:about="http://identifiers.org/biomodels.vocabulary#InitialAssignment"/>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#KineticLaw -->
+
+    <Class rdf:about="http://identifiers.org/biomodels.vocabulary#KineticLaw"/>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#LocalParameter -->
+
+    <Class rdf:about="http://identifiers.org/biomodels.vocabulary#LocalParameter"/>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference -->
+
+    <Class rdf:about="http://identifiers.org/biomodels.vocabulary#ModifierSpeciesReference"/>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#Parameter -->
+
+    <Class rdf:about="http://identifiers.org/biomodels.vocabulary#Parameter"/>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#Reaction -->
+
+    <Class rdf:about="http://identifiers.org/biomodels.vocabulary#Reaction"/>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#SBMLModel -->
+
+    <Class rdf:about="http://identifiers.org/biomodels.vocabulary#SBMLModel"/>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#SBMLUnit -->
+
+    <Class rdf:about="http://identifiers.org/biomodels.vocabulary#SBMLUnit"/>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef -->
+
+    <Class rdf:about="http://identifiers.org/biomodels.vocabulary#SBMLUnitsDef"/>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#Species -->
+
+    <Class rdf:about="http://identifiers.org/biomodels.vocabulary#Species"/>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#SpeciesReference -->
+
+    <Class rdf:about="http://identifiers.org/biomodels.vocabulary#SpeciesReference"/>
+    
+
+
+    <!-- http://identifiers.org/biomodels.vocabulary#Trigger -->
+
+    <Class rdf:about="http://identifiers.org/biomodels.vocabulary#Trigger"/>
+    
+
+
+    <!-- http://rdfs.org/ns/void#Dataset -->
+
+    <Class rdf:about="http://rdfs.org/ns/void#Dataset"/>
+    
+
+
+    <!-- http://rdfs.org/ns/void#DatasetDescription -->
+
+    <Class rdf:about="http://rdfs.org/ns/void#DatasetDescription"/>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#QuadMap -->
+
+    <Class rdf:about="http://www.openlinksw.com/schemas/virtrdf#QuadMap"/>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#QuadMapATable -->
+
+    <Class rdf:about="http://www.openlinksw.com/schemas/virtrdf#QuadMapATable"/>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#QuadMapColumn -->
+
+    <Class rdf:about="http://www.openlinksw.com/schemas/virtrdf#QuadMapColumn"/>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#QuadMapFText -->
+
+    <Class rdf:about="http://www.openlinksw.com/schemas/virtrdf#QuadMapFText"/>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat -->
+
+    <Class rdf:about="http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat"/>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#QuadMapValue -->
+
+    <Class rdf:about="http://www.openlinksw.com/schemas/virtrdf#QuadMapValue"/>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#QuadStorage -->
+
+    <Class rdf:about="http://www.openlinksw.com/schemas/virtrdf#QuadStorage"/>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMap -->
+
+    <Class rdf:about="http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMap"/>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapATable -->
+
+    <Class rdf:about="http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapATable"/>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapColumn -->
+
+    <Class rdf:about="http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapColumn"/>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapFormat -->
+
+    <Class rdf:about="http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapFormat"/>
+    
+
+
+    <!-- http://www.openlinksw.com/schemas/virtrdf#array-of-string -->
+
+    <Class rdf:about="http://www.openlinksw.com/schemas/virtrdf#array-of-string"/>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#Property -->
+
+    <Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Class -->
+
+    <Class rdf:about="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#AnnotationProperty -->
+
+    <Class rdf:about="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Class -->
+
+    <Class rdf:about="http://www.w3.org/2002/07/owl#Class"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#NamedIndividual -->
+
+    <Class rdf:about="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Ontology -->
+
+    <Class rdf:about="http://www.w3.org/2002/07/owl#Ontology"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#OntologyProperty -->
+
+    <Class rdf:about="http://www.w3.org/2002/07/owl#OntologyProperty"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sparql-service-description#Service -->
+
+    <Class rdf:about="http://www.w3.org/ns/sparql-service-description#Service"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.1.4.20160202-2327) https://github.com/owlcs/owlapi -->
+
