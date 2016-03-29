@@ -71,7 +71,6 @@ public class Explorer {
 
 	private List<QuerySolution> executeQuery(String queryString, int offset) {
 		queryString += String.format(limitQuerySufix, limit, offset);
-		System.out.println("EXECUTING QUERY: " + queryString);
 		int count = 0;
 		while(count<maxRetries) {
 			try {
@@ -123,9 +122,6 @@ public class Explorer {
 	
 	public OntologyData execute(PrintStream ps) {
 		
-		System.setProperty("http.proxyHost", "proxy.uma.es");
-        System.setProperty("http.proxyPort", "3128");
-		
 		int offset;
 		OntologyData endpointOntology = new OntologyData();
 		List<QuerySolution> list;
@@ -149,7 +145,7 @@ public class Explorer {
 				endpointOntology.addProperty(propertyUri);
 			}
 			offset += limit;
-			ps.println(list.size() + " properties found.");
+			ps.println(endpointOntology.getProperties().size() + " properties found.");
 		} while (list.size() == limit);
 		
 		for (String propertyUri : endpointOntology.getProperties()) {
@@ -162,7 +158,7 @@ public class Explorer {
 					endpointOntology.addClass(domainUri);
 				}
 				offset += limit;
-				ps.println(list.size()
+				ps.println(endpointOntology.getDomain(propertyUri).size()
 						+ " domains obtained for "+propertyUri+".");
 			} while (list.size() == limit);
 		}
@@ -177,7 +173,7 @@ public class Explorer {
 					endpointOntology.addClass(rangeUri);
 				}
 				offset += limit;
-				ps.println(list.size()
+				ps.println(endpointOntology.getRange(propertyUri).size()
 						+ " ranges obtained for "+propertyUri+".");
 			} while (list.size() == limit);
 		}
